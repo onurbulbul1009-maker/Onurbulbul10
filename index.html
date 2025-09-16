@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onur'u Seviyo Musun?</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin-top: 50px;
+}
+#soru {
+  background-color: yellow;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 15px 30px;
+  margin-bottom: 50px;
+}
+button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  margin: 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+#evet { background-color: green; }
+#hayir { background-color: red; }
+</style>
+</head>
+<body>
+<div id="soru">ONUR'U SEVİYO MUSUN?</div>
+<button id="evet">EVET</button>
+<button id="hayir">HAYIR</button>
+
+<script>
+const hayir = document.getElementById("hayir");
+const evet = document.getElementById("evet");
+
+function moveButton() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  hayir.style.position = "absolute";
+  hayir.style.left = x + "px";
+  hayir.style.top = y + "px";
+}
+
+hayir.addEventListener("mouseover", moveButton);
+hayir.addEventListener("touchstart", moveButton);
+
+evet.addEventListener("click", () => {
+  alert("BENDE SENİ SEVİYORUM <3");
+});
+</script>
+</body>
+</html>
